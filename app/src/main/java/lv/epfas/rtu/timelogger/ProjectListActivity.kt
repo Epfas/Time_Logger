@@ -3,6 +3,7 @@ package lv.epfas.rtu.timelogger
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_project_list.*
 
 class ProjectListActivity : AppCompatActivity(), ProjectAdapterClickListener {
@@ -18,6 +19,13 @@ class ProjectListActivity : AppCompatActivity(), ProjectAdapterClickListener {
         setContentView(R.layout.activity_project_list)
 
         items.addAll(db.ProjectDao().getAll())
+
+        Toast.makeText(
+            this,
+            items.size.toString(),
+            Toast.LENGTH_SHORT
+        ).show()
+
         adapter = ProjectRecyclerAdapter(this, items)
         lsItems.adapter = adapter
 

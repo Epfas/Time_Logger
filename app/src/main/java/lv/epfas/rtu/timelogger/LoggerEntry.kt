@@ -1,14 +1,17 @@
 package lv.epfas.rtu.timelogger
 
 import androidx.room.*
+import java.time.LocalDate
 import java.time.LocalDateTime
+import java.time.LocalTime
+import java.util.*
 
 @Entity(tableName = "logger_entry")
 data class LoggerEntry(
     val projectId: Long,
     val taskId: Long,
-    val startedAt: LocalDateTime,
-    val finishedAt: LocalDateTime,
+    val startedAt: Date?,
+    val finishedAt: Date?,
     val note: String,
     val closed: Boolean,
     @PrimaryKey(autoGenerate = true) var uid: Long = 0

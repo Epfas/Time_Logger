@@ -4,8 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 
 @Database(version = 1, entities = [Project::class, ProjectTask::class, LoggerEntry::class])
+@TypeConverters(Converters::class)
+
 abstract class TimeLoggerDatabase : RoomDatabase() {
 
     abstract fun ProjectDao(): ProjectDao

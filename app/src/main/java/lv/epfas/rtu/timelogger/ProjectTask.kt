@@ -29,7 +29,7 @@ interface ProjectTaskDao {
     @Query("SELECT * FROM project_task WHERE projectId = :projectId AND closed = :closed")
     fun getitemsByProjectAndStatus(projectId: Long, closed: Boolean): List<ProjectTask>
 
-    @Query("SELECT * FROM project WHERE uid = :taskId")
+    @Query("SELECT * FROM project_task WHERE uid = :taskId")
     fun getItemById(taskId: Long): ProjectTask
 
     @Insert
