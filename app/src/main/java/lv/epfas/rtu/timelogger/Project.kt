@@ -11,8 +11,8 @@ data class Project(
     val name: String,
     val favorite: Boolean,
     val internal: Boolean,
-    val color: Color,
-    @PrimaryKey(autoGenerate = true) var uid: Long = 0
+    val closed: Boolean,
+    @PrimaryKey(autoGenerate = true) var uid: Long = 0L
 )
 
 @Dao
@@ -22,6 +22,15 @@ interface ProjectDao {
 
     @Query("SELECT * FROM project WHERE uid = :projectId")
     fun getItemById(projectId: Long): Project
+
+    @Query("SELECT * FROM project WHERE closed = 0")
+    fun getOpenItems(): List<Project>
+
+    @Query("SELECT * FROM project WHERE closed = 0 AND internal = 1")
+    fun getInternalItems(): List<Project>
+
+    @Query("SELECT * FROM project WHERE closed = 0 AND favorite = 1")
+    fun getFavoriteItems(): List<Project>
 
     @Insert
     fun insertAll(vararg items: Project): List<Long>

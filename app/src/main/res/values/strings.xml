@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Time Logger</string>
+    <string name="code_label">Code</string>
+    <string name="name_label">Name</string>
+    <string name="favorite_label">Favorite</string>
+    <string name="internal_label">Internal</string>
+    <string name="closed_label">Closed</string>
+    <string name="na_label">- NA -</string>
+    <string name="enter_data_msg">Enter required fields</string>
 </resources>

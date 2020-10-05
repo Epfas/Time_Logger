@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Laika Reģistrators</string>
+    <string name="name_label">Nosaukums</string>
+    <string name="favorite_label">Favorīts</string>
+    <string name="internal_label">Iekšējais</string>
+    <string name="code_label">Kods</string>
+    <string name="closed_label">Slēgts</string>
+    <string name="na_label">- ND -</string>
+    <string name="enter_data_msg">Aizpildiet obligātus laukus.</string>
 </resources>

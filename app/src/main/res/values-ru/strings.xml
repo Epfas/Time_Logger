@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Регистратор Времени</string>
+    <string name="name_label">Название</string>
+    <string name="favorite_label">Фаворит</string>
+    <string name="internal_label">Внутренний</string>
+    <string name="code_label">Код</string>
+    <string name="closed_label">Закрыт</string>
+    <string name="na_label">- НД -</string>
+    <string name="enter_data_msg">Заполните обязательные поля</string>
 </resources>
