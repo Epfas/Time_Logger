@@ -34,6 +34,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        btnFinishTask.setOnClickListener({
+            Toast.makeText(
+                this,
+                "Time stopped",
+                Toast.LENGTH_SHORT
+            ).show()
+        })
+
         btnProjects.setOnClickListener({
             // startActivity(Intent(this, ProjectListActivity::class.java))
             val timelinePoint = LocalDateTime.parse("2020-10-07T02:49:00")
