@@ -8,4 +8,7 @@
     <string name="closed_label">Slēgts</string>
     <string name="na_label">- ND -</string>
     <string name="enter_data_msg">Aizpildiet obligātus laukus.</string>
+    <string name="current_task_caption">Uzdevums</string>
+    <string name="time_caption">Laiks</string>
+    <string name="project_caption">Projekts</string>
 </resources>

@@ -7,4 +7,7 @@
     <string name="closed_label">Closed</string>
     <string name="na_label">- NA -</string>
     <string name="enter_data_msg">Enter required fields</string>
+    <string name="current_task_caption">Task</string>
+    <string name="time_caption">Time</string>
+    <string name="project_caption">Project</string>
 </resources>

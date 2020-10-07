@@ -8,4 +8,7 @@
     <string name="closed_label">Закрыт</string>
     <string name="na_label">- НД -</string>
     <string name="enter_data_msg">Заполните обязательные поля</string>
+    <string name="current_task_caption">Задача</string>
+    <string name="time_caption">Время</string>
+    <string name="project_caption">Проект</string>
 </resources>
