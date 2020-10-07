@@ -63,3 +63,11 @@ class MainActivity : AppCompatActivity() {
         })
     }
 }
+
+interface LoggerStateAdapterClickListener {
+
+    fun itemClicked(item: LoggerState)
+
+    fun finishClicked(item: LoggerState)
+
+}
