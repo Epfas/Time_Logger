@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/laCodeData" />
 
     <CheckBox
-        android:id="@+id/cbInternal"
+        android:id="@+id/chInternalPL"
         android:layout_width="100dp"
         android:layout_height="25dp"
         android:layout_marginStart="4dp"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/laNameData" />
 
     <CheckBox
-        android:id="@+id/chFavorite"
+        android:id="@+id/chFavoritePL"
         android:layout_width="100dp"
         android:layout_height="25dp"
         android:layout_marginTop="4dp"
@@ -73,18 +73,18 @@
         android:textSize="@dimen/text_line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.771"
-        app:layout_constraintStart_toEndOf="@+id/chClosed"
+        app:layout_constraintStart_toEndOf="@+id/chClosedPL"
         app:layout_constraintTop_toBottomOf="@+id/laNameData" />
 
     <CheckBox
-        android:id="@+id/chClosed"
+        android:id="@+id/chClosedPL"
         android:layout_width="100dp"
         android:layout_height="25dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="4dp"
         android:text="@string/closed_label"
         android:textSize="@dimen/text_line"
-        app:layout_constraintStart_toEndOf="@+id/cbInternal"
+        app:layout_constraintStart_toEndOf="@+id/chInternalPL"
         app:layout_constraintTop_toBottomOf="@+id/laNameData" />
 
     <ImageButton

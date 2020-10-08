@@ -19,12 +19,7 @@ class ProjectListActivity : AppCompatActivity(), ProjectAdapterClickListener {
         setContentView(R.layout.activity_project_list)
 
         items.addAll(db.ProjectDao().getAll())
-
-        Toast.makeText(
-            this,
-            items.size.toString(),
-            Toast.LENGTH_SHORT
-        ).show()
+        showLineCount()
 
         adapter = ProjectRecyclerAdapter(this, items)
         lsItems.adapter = adapter
@@ -59,6 +54,14 @@ class ProjectListActivity : AppCompatActivity(), ProjectAdapterClickListener {
             items[position] = item
             adapter.notifyItemChanged(position)
         }
+    }
+
+    private fun showLineCount() {
+        Toast.makeText(
+            this,
+            resources.getString(R.string.line_count) + items.size.toString(),
+            Toast.LENGTH_SHORT
+        ).show()
     }
 
     companion object {

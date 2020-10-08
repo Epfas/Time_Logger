@@ -11,4 +11,7 @@
     <string name="current_task_caption">Uzdevums</string>
     <string name="time_caption">Laiks</string>
     <string name="project_caption">Projekts</string>
+    <string name="line_count">"Skaits: "</string>
+    <string name="projects">Projects</string>
+    <string name="make_demo_data">Make demo data</string>
 </resources>

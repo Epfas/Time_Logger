@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/projects_item"
+        android:icon="@android:drawable/ic_menu_today"
+        android:title="@string/projects"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/demo_data_item"
+        android:icon="@android:drawable/ic_input_get"
+        android:title="@string/make_demo_data"
+        app:showAsAction="withText" />
+</menu>

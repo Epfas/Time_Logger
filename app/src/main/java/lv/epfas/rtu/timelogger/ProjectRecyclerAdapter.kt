@@ -4,7 +4,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_project_card.view.*
 import kotlinx.android.synthetic.main.project_line.view.*
+
 
 class ProjectRecyclerAdapter(
     private val listener: ProjectAdapterClickListener,
@@ -27,7 +29,9 @@ class ProjectRecyclerAdapter(
         val context = holder.itemView.context
         holder.itemView.laCodeData.text = item.code
         holder.itemView.laNameData.text = item.name
-        // holder.itemView.chClosed.isChecked =
+        holder.itemView.chInternalPL.setChecked(item.internal)
+        holder.itemView.chFavoritePL.setChecked(item.favorite)
+        holder.itemView.chClosedPL.setChecked(item.closed)
         // holder.itemView.shoppingQuantity.text = context.resources
         //     .getString(R.string.quantity_text, item.quantity, item.unit)
 

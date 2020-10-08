@@ -9,36 +9,42 @@
     <TextView
         android:id="@+id/laCode"
         android:layout_width="100dp"
-        android:layout_height="25dp"
+        android:layout_height="0dp"
         android:layout_marginStart="4dp"
         android:text="@string/code_label"
         android:visibility="visible"
+        android:textSize="@dimen/label_small"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edCodeData"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
+        android:layout_height="0dp"
         android:layout_marginStart="4dp"
         android:text="@string/na_label"
+        android:textSize="@dimen/text_line"
         app:layout_constraintStart_toEndOf="@+id/laCode"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/laName"
         android:layout_width="100dp"
-        android:layout_height="25dp"
+        android:layout_height="0dp"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
         android:text="@string/name_label"
+        android:textSize="@dimen/label_small"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/laCodeData" />
+        app:layout_constraintTop_toBottomOf="@+id/edCodeData" />
 
     <EditText
         android:id="@+id/edNameData"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
+        android:layout_height="0dp"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:textSize="@dimen/text_line"
         android:text="@string/na_label"
         app:layout_constraintEnd_toStartOf="@+id/btnRemove"
         app:layout_constraintHorizontal_bias="0.0"
@@ -46,11 +52,12 @@
         app:layout_constraintTop_toBottomOf="@+id/edCodeData" />
 
     <CheckBox
-        android:id="@+id/cbInternal"
+        android:id="@+id/chInternal"
         android:layout_width="100dp"
-        android:layout_height="25dp"
+        android:layout_height="0dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
+        android:textSize="@dimen/text_line"
         android:text="@string/internal_label"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edNameData" />
@@ -58,9 +65,10 @@
     <CheckBox
         android:id="@+id/chFavorite"
         android:layout_width="100dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="4dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         android:text="@string/favorite_label"
+        android:textSize="@dimen/text_line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.771"
         app:layout_constraintStart_toEndOf="@+id/chClosed"
@@ -69,11 +77,11 @@
     <CheckBox
         android:id="@+id/chClosed"
         android:layout_width="100dp"
-        android:layout_height="25dp"
+        android:layout_height="0dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:text="@string/closed_label"
-        app:layout_constraintStart_toEndOf="@+id/cbInternal"
+        app:layout_constraintStart_toEndOf="@+id/chInternal"
         app:layout_constraintTop_toBottomOf="@+id/edNameData" />
 
     <ImageButton

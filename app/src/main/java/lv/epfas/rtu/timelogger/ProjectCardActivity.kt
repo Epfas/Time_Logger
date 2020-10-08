@@ -12,7 +12,7 @@ class ProjectCardActivity : AppCompatActivity() {
 
     private val db get() = Database.getInstance(this)
 
-    // private val items = mutableListOf<Project>()
+    private val items = mutableListOf<Project>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +20,26 @@ class ProjectCardActivity : AppCompatActivity() {
 
         val id = intent.getLongExtra(EXTRA_ID, 0)
 
+        updateFiels(id)
+
         btnSave.setOnClickListener { saveItem(id) }
+    }
+
+    private fun updateFiels(projectId: Long) {
+        if (projectId == 0L) {
+            edCodeData.setText("")
+            edNameData.setText("")
+            chInternal.setChecked(false)
+            chFavorite.setChecked(false)
+            chClosed.setChecked(false)
+        } else {
+            val item = db.ProjectDao().getItemById(projectId)
+            edCodeData.setText(item.code)
+            edNameData.setText(item.name)
+            chInternal.setChecked(item.internal)
+            chFavorite.setChecked(item.favorite)
+            chClosed.setChecked(item.closed)
+        }
     }
 
     private fun saveItem(projectId: Long) {
@@ -37,9 +56,9 @@ class ProjectCardActivity : AppCompatActivity() {
             val item = Project(
                 edCodeData.text.toString(),
                 edNameData.text.toString(),
-                true,
-                true,
-                false
+                chFavorite.isChecked,
+                chInternal.isChecked,
+                chClosed.isChecked
             )
             item.uid = db.ProjectDao().insertAll(item).first()
             val intent = Intent().putExtra(EXTRA_ID, item.uid)
@@ -48,7 +67,10 @@ class ProjectCardActivity : AppCompatActivity() {
             db.ProjectDao().update(
                 item.copy(
                     code = edCodeData.text.toString(),
-                    name = edNameData.text.toString()
+                    name = edNameData.text.toString(),
+                    favorite = chFavorite.isChecked,
+                    internal = chInternal.isChecked,
+                    closed = chClosed.isChecked
                 )
             )
             // val intent = Intent().putExtra(EXTRA_ID, item.uid)
