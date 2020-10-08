@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.main_panel.view.*
 import lv.epfas.rtu.timelogger.R
 
 class LoggerStateRecyclerAdapter(
-    private val listener: LoggerStateAdapterClickListener,
+//     private val listener: LoggerStateAdapterClickListener,
     private val items: MutableList<LoggerState>
 ) :
     RecyclerView.Adapter<LoggerStateRecyclerAdapter.LoggerStateViewHolder>() {
@@ -36,11 +36,11 @@ class LoggerStateRecyclerAdapter(
 
 
         holder.itemView.setOnClickListener {
-            listener.itemClicked(items[position])
+            //listener.itemClicked(items[position])
         }
 
         holder.itemView.btnFinishTask.setOnClickListener {
-            listener.finishClicked(items[position])
+            //listener.finishClicked(items[position])
             items.removeAt(position)
 
             notifyDataSetChanged()

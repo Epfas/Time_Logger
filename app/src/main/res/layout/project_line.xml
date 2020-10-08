@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="110dp"
+    android:background="#FFFFFF"
+    android:backgroundTintMode="src_over">
 
     <TextView
         android:id="@+id/laCode"
@@ -11,6 +13,7 @@
         android:layout_height="25dp"
         android:layout_marginStart="4dp"
         android:text="@string/code_label"
+        android:textSize="@dimen/label_small"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,6 +24,8 @@
         android:layout_height="25dp"
         android:layout_marginStart="4dp"
         android:text="@string/na_label"
+        android:textSize="@dimen/text_title"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/laCode"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,17 +35,21 @@
         android:layout_height="25dp"
         android:layout_marginStart="4dp"
         android:text="@string/name_label"
+        android:textSize="@dimen/label_small"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/laCodeData" />
 
     <TextView
         android:id="@+id/laNameData"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
+        android:layout_height="0dp"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
         android:text="@string/na_label"
+        android:textSize="@dimen/text_line"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/btnRemove"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.004"
         app:layout_constraintStart_toEndOf="@+id/laName"
         app:layout_constraintTop_toBottomOf="@+id/laCodeData" />
 
@@ -51,6 +60,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         android:text="@string/internal_label"
+        android:textSize="@dimen/text_line"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/laNameData" />
 
@@ -60,6 +70,7 @@
         android:layout_height="25dp"
         android:layout_marginTop="4dp"
         android:text="@string/favorite_label"
+        android:textSize="@dimen/text_line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.771"
         app:layout_constraintStart_toEndOf="@+id/chClosed"
@@ -72,6 +83,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="4dp"
         android:text="@string/closed_label"
+        android:textSize="@dimen/text_line"
         app:layout_constraintStart_toEndOf="@+id/cbInternal"
         app:layout_constraintTop_toBottomOf="@+id/laNameData" />
 
