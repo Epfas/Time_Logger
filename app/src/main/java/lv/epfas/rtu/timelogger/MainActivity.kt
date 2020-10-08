@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -43,23 +45,38 @@ class MainActivity : AppCompatActivity(), ProjectTaskAdapterClickListener {
         setContentView(R.layout.activity_main)
 
         updateMainPanel()
-        items.addAll(db.ProjectTaskDao().getAll())
-        Toast.makeText(
-            this,
-            items.size.toString(),
-            Toast.LENGTH_SHORT
-        ).show()
+        showLineCount()
 
         adapter = ProjectTaskRecyclerAdapter(this, items)
         projectTaskItems.adapter = adapter
 
         btnFinishTask.setOnClickListener { finishTask() }
+    }
 
-        btnDemo.setOnClickListener { prepareDemoData() }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
 
-        btnProjects.setOnClickListener({
-            startActivity(Intent(this, ProjectListActivity::class.java))
-        })
+            R.id.projects_item -> {
+                startActivity(Intent(this, ProjectListActivity::class.java))
+                true
+            }
+
+            R.id.demo_data_item -> {
+                prepareDemoData()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_items, menu)
+        return true
     }
 
     private fun updateMainPanel() {
@@ -78,6 +95,14 @@ class MainActivity : AppCompatActivity(), ProjectTaskAdapterClickListener {
             laTimeValue.setText("00:00")
             btnFinishTask.visibility = View.VISIBLE
         }
+    }
+
+    private fun showLineCount() {
+        Toast.makeText(
+            this,
+            resources.getString(R.string.line_count) + items.size.toString(),
+            Toast.LENGTH_SHORT
+        ).show()
     }
 
     private fun finishTask() {

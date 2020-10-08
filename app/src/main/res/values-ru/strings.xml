@@ -11,7 +11,10 @@
     <string name="current_task_caption">Задача</string>
     <string name="time_caption">Время</string>
     <string name="project_caption">Проект</string>
-    <string name="line_count">"К-во: "</string>
+    <string name="line_count">"К-во:   "</string>
     <string name="projects">Projects</string>
     <string name="make_demo_data">Make demo data</string>
+    <string name="all">Все</string>
+    <string name="internal">Внутренние</string>
+    <string name="favourite">Фавориты</string>
 </resources>

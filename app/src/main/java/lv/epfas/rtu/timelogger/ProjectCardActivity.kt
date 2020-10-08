@@ -17,6 +17,7 @@ class ProjectCardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_project_card)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val id = intent.getLongExtra(EXTRA_ID, 0)
 

@@ -3,6 +3,8 @@ package lv.epfas.rtu.timelogger
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_project_list.*
 
@@ -17,6 +19,7 @@ class ProjectListActivity : AppCompatActivity(), ProjectAdapterClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_project_list)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         items.addAll(db.ProjectDao().getAll())
         showLineCount()
@@ -24,8 +27,46 @@ class ProjectListActivity : AppCompatActivity(), ProjectAdapterClickListener {
         adapter = ProjectRecyclerAdapter(this, items)
         lsItems.adapter = adapter
 
-        btnAdd.setOnClickListener { appendItem() }
+        btnAddProject.setOnClickListener { appendItem() }
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+
+            R.id.mi_projects_all -> {
+                items.removeAll(items)
+                items.addAll(db.ProjectDao().getAll())
+                adapter.notifyDataSetChanged()
+                true
+            }
+
+            R.id.mi_project_favourite -> {
+                items.removeAll(items)
+                items.addAll(db.ProjectDao().getFavoriteItems())
+                adapter.notifyDataSetChanged()
+                true
+            }
+
+            R.id.mi_project_internal -> {
+                items.removeAll(items)
+                items.addAll(db.ProjectDao().getInternalItems())
+                adapter.notifyDataSetChanged()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.project_menu, menu)
+        return true
+    }
+
 
     private fun appendItem() {
         val intent = Intent(this, ProjectCardActivity::class.java)

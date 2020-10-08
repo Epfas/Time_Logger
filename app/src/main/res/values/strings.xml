@@ -2,7 +2,7 @@
     <string name="app_name">Time Logger</string>
     <string name="code_label">Code</string>
     <string name="name_label">Name</string>
-    <string name="favorite_label">Favorite</string>
+    <string name="favorite_label">Favourite</string>
     <string name="internal_label">Internal</string>
     <string name="closed_label">Closed</string>
     <string name="na_label">- NA -</string>
@@ -10,7 +10,7 @@
     <string name="current_task_caption">Task</string>
     <string name="time_caption">Time</string>
     <string name="project_caption">Project</string>
-    <string name="line_count">Count:</string>
+    <string name="line_count">"Count:   "</string>
     <string name="projects">Projects</string>
     <string name="make_demo_data">Make demo data</string>
     <string name="title_activity_settings">SettingsActivity</string>
@@ -29,4 +29,7 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="all">All</string>
+    <string name="internal">Internal</string>
+    <string name="favourite">Favourite</string>
 </resources>
