@@ -91,9 +91,9 @@ class ProjectListActivity : AppCompatActivity(), ProjectAdapterClickListener {
             val item = db.ProjectDao().getItemById(id)
 
             val position = items.indexOfFirst { it.uid == item.uid }
-            items.sortBy { it.code }
             items[position] = item
             adapter.notifyItemChanged(position)
+            // adapter.notifyDataSetChanged()
         }
     }
 
